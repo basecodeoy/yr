@@ -61,6 +61,10 @@
     },
     "extra": {
         "laravel": {
+            "aliases": {
+                "Location": "BombenProdukt\\Yr\\Location\\Facades\\Location",
+                "Weather": "BombenProdukt\\Yr\\Weather\\Facades\\Weather"
+            },
             "providers": [
                 "BombenProdukt\\Yr\\ServiceProvider"
             ]
