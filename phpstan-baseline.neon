@@ -1,12 +1,62 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Parameter \\#1 \\$data of static method BombenProdukt\\\\Yr\\\\Location\\\\Data\\\\Response\\:\\:fromResponse\\(\\) expects array, mixed given\\.$#"
+			message: "#^Method BombenProdukt\\\\Yr\\\\Location\\\\Client\\:\\:request\\(\\) should return array but returns mixed\\.$#"
 			count: 1
 			path: src/Location/Client.php
 
 		-
-			message: "#^Parameter \\$location of class BombenProdukt\\\\Yr\\\\Location\\\\Data\\\\Links constructor expects Illuminate\\\\Support\\\\Collection\\<int, BombenProdukt\\\\Yr\\\\Location\\\\Data\\\\Link\\>, Illuminate\\\\Support\\\\Collection\\<string, BombenProdukt\\\\Yr\\\\Location\\\\Data\\\\Link\\> given\\.$#"
+			message: "#^Unable to resolve the template type TKey in call to function collect$#"
+			count: 2
+			path: src/Location/Data/CelestialEvents/Response.php
+
+		-
+			message: "#^Unable to resolve the template type TValue in call to function collect$#"
+			count: 2
+			path: src/Location/Data/CelestialEvents/Response.php
+
+		-
+			message: "#^Unable to resolve the template type TKey in call to function collect$#"
+			count: 1
+			path: src/Location/Data/CurrentHour/Response.php
+
+		-
+			message: "#^Unable to resolve the template type TValue in call to function collect$#"
+			count: 1
+			path: src/Location/Data/CurrentHour/Response.php
+
+		-
+			message: "#^Unable to resolve the template type TKey in call to function collect$#"
+			count: 1
+			path: src/Location/Data/Forecast/LongInterval.php
+
+		-
+			message: "#^Unable to resolve the template type TValue in call to function collect$#"
+			count: 1
+			path: src/Location/Data/Forecast/LongInterval.php
+
+		-
+			message: "#^Unable to resolve the template type TKey in call to function collect$#"
+			count: 3
+			path: src/Location/Data/Forecast/Response.php
+
+		-
+			message: "#^Unable to resolve the template type TValue in call to function collect$#"
+			count: 3
+			path: src/Location/Data/Forecast/Response.php
+
+		-
+			message: "#^Unable to resolve the template type TKey in call to function collect$#"
+			count: 1
+			path: src/Location/Data/Forecast/ShortInterval.php
+
+		-
+			message: "#^Unable to resolve the template type TValue in call to function collect$#"
+			count: 1
+			path: src/Location/Data/Forecast/ShortInterval.php
+
+		-
+			message: "#^Parameter \\$location of class BombenProdukt\\\\Yr\\\\Location\\\\Data\\\\Links constructor expects Illuminate\\\\Support\\\\Collection\\<int, BombenProdukt\\\\Yr\\\\Location\\\\Data\\\\Link\\>\\|null, Illuminate\\\\Support\\\\Collection\\<string, BombenProdukt\\\\Yr\\\\Location\\\\Data\\\\Link\\>\\|null given\\.$#"
 			count: 1
 			path: src/Location/Data/Links.php
 
@@ -38,12 +88,12 @@ parameters:
 		-
 			message: "#^Unable to resolve the template type TKey in call to function collect$#"
 			count: 1
-			path: src/Location/Data/Response.php
+			path: src/Location/Data/Suggest/Response.php
 
 		-
 			message: "#^Unable to resolve the template type TValue in call to function collect$#"
 			count: 1
-			path: src/Location/Data/Response.php
+			path: src/Location/Data/Suggest/Response.php
 
 		-
 			message: "#^Parameter \\#1 \\$data of static method BombenProdukt\\\\Yr\\\\Weather\\\\Data\\\\Response\\:\\:fromResponse\\(\\) expects array, mixed given\\.$#"
