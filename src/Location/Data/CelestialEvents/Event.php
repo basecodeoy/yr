@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Yr\Location\Data\CelestialEvents;
 
+use Carbon\CarbonImmutable;
 use Spatie\LaravelData\Data;
 
 final class Event extends Data
 {
     private function __construct(
         public readonly string $body,
-        public readonly string $time,
+        public readonly CarbonImmutable $time,
         public readonly string $type,
         public readonly ?float $value,
     ) {
@@ -21,7 +22,7 @@ final class Event extends Data
     {
         return new self(
             body: $data['body'],
-            time: $data['time'],
+            time: CarbonImmutable::parse($data['time']),
             type: $data['type'],
             value: $data['value'] ?? null,
         );
