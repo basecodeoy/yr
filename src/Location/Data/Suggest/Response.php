@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
-namespace BombenProdukt\Yr\Location\Data;
+namespace BombenProdukt\Yr\Location\Data\Suggest;
 
+use BombenProdukt\Yr\Location\Data\Links;
+use BombenProdukt\Yr\Location\Data\Location;
 use Illuminate\Support\Collection;
 use Spatie\LaravelData\Data;
 

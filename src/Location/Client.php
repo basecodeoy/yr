@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Yr\Location;
 
-use BombenProdukt\Yr\Location\Data\Response;
+use BombenProdukt\Yr\Location\Data\CelestialEvents\Response as CelestialEventsResponse;
+use BombenProdukt\Yr\Location\Data\CurrentHour\Response as CurrentHourResponse;
+use BombenProdukt\Yr\Location\Data\Forecast\Response as ForecastResponse;
+use BombenProdukt\Yr\Location\Data\Location\Response as LocationResponse;
+use BombenProdukt\Yr\Location\Data\Suggest\Response as SuggestResponse;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Http;
 
@@ -19,33 +23,43 @@ final readonly class Client
             ->throw();
     }
 
-    public function get(string $location, string $language = 'en'): Response
+    public function info(string $location, string $language = 'en'): LocationResponse
     {
-        return $this->request($location, ['language' => $language]);
+        return LocationResponse::fromResponse(
+            $this->request($location, ['language' => $language]),
+        );
     }
 
-    public function forecast(string $location): Response
+    public function forecast(string $location): ForecastResponse
     {
-        return $this->request("{$location}/forecast");
+        return ForecastResponse::fromResponse(
+            $this->request("{$location}/forecast"),
+        );
     }
 
-    public function currentHour(string $location): Response
+    public function currentHour(string $location): CurrentHourResponse
     {
-        return $this->request("{$location}/forecast/currenthour");
+        return CurrentHourResponse::fromResponse(
+            $this->request("{$location}/forecast/currenthour"),
+        );
     }
 
-    public function celestialEvents(string $location): Response
+    public function celestialEvents(string $location): CelestialEventsResponse
     {
-        return $this->request("{$location}/celestialevents");
+        return CelestialEventsResponse::fromResponse(
+            $this->request("{$location}/celestialevents"),
+        );
     }
 
-    public function suggest(string $query, string $language = 'en'): Response
+    public function suggest(string $query, string $language = 'en'): SuggestResponse
     {
-        return $this->request('suggest', ['q' => $query, 'language' => $language]);
+        return SuggestResponse::fromResponse(
+            $this->request('suggest', ['q' => $query, 'language' => $language]),
+        );
     }
 
-    private function request(string $path, array $query = []): Response
+    private function request(string $path, array $query = []): array
     {
-        return Response::fromResponse($this->client->get($path, $query)->json());
+        return $this->client->get($path, $query)->json();
     }
 }

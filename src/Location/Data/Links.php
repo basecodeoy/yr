@@ -14,9 +14,9 @@ final class Links extends Data
      */
     private function __construct(
         public readonly Link $self,
-        public readonly Link $page,
-        public readonly Link $search,
-        public readonly Collection $location,
+        public readonly ?Link $page,
+        public readonly ?Link $search,
+        public readonly ?Collection $location,
     ) {
         //
     }
@@ -25,10 +25,11 @@ final class Links extends Data
     {
         return new self(
             self: Link::fromResponse($data['self']),
-            page: Link::fromResponse($data['page']),
-            search: Link::fromResponse($data['search']),
-            location: collect($data['location'])
-                ->mapWithKeys(fn (array $value, string $key) => [$key => Link::fromResponse($value)]),
+            page: isset($data['page']) ? Link::fromResponse($data['page']) : null,
+            search: isset($data['search']) ? Link::fromResponse($data['search']) : null,
+            location: isset($data['location'])
+                ? collect($data['location'])->mapWithKeys(fn (array $value, string $key) => [$key => Link::fromResponse($value)])
+                : null,
         );
     }
 }

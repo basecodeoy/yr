@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit\Location\Data;
+namespace Tests\Unit\Location\Data\Suggest;
 
 use BombenProdukt\Yr\Location\Data\Links;
 use BombenProdukt\Yr\Location\Data\Location;
-use BombenProdukt\Yr\Location\Data\Response;
+use BombenProdukt\Yr\Location\Data\Suggest\Response;
 use Illuminate\Support\Collection;
 
 it('can create a Response instance from response data', function (): void {
