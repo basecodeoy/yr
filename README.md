@@ -4,20 +4,6 @@
     </a>
 </p>
 
-<p align="center">
-    <a href="https://github.com/faustbrian/laravel-yr/actions">
-        <img src="https://badge.sh/github/check-runs/BombenProdukt/laravel-yr" alt="Checks" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/laravel-yr">
-        <img src="https://badge.sh/packagist/downloads/BombenProdukt/laravel-yr" alt="Downloads" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/laravel-yr">
-        <img src="https://badge.sh/packagist/version/BombenProdukt/laravel-yr" alt="Version" />
-    </a>
-    <a href="https://packagist.org/packages/bombenprodukt/laravel-yr">
-        <img src="https://badge.sh/packagist/license/BombenProdukt/laravel-yr" alt="License" />
-    </a>
-</p>
 
 ## About Laravel Yr
 
